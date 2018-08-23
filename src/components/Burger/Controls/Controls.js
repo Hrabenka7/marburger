@@ -12,11 +12,14 @@ const controls = [
 ]
 
 
-const Controls = () => {
+const Controls = (props) => {
     return (
         <div className={controlsStyling.Controls}>
             {controls.map(currentEl => (
-                <SingleControl key={currentEl.label} label={currentEl.label}/>
+                <SingleControl 
+                    key={currentEl.label}
+                    label={currentEl.label}
+                    added={() => props.ingredientAdded(currentEl.type)}/>
             ))}
         </div>
     );

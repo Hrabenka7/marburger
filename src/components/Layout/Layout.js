@@ -5,7 +5,7 @@ const layout = (props) => (
     <React.Fragment>
         <div>Toolbar, SideDrawer, Backdrop</div>
         <main className={layoutStyling.Content}>
-            {props.children}
+            {props.children} {/*  === BurgerBuilder.children === Burger, Controls */}
         </main>
     </React.Fragment>
 )

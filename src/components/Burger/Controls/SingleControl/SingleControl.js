@@ -10,7 +10,7 @@ const SingleControl = (props) => {
             </div>
             
             <button className={controlStyling.Less}>Less</button>
-            <button className={controlStyling.More}>More</button>
+            <button className={controlStyling.More} onClick={props.added}>More</button>
         </div>
     );
 };
