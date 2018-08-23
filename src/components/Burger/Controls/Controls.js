@@ -24,7 +24,9 @@ const Controls = (props) => {
                     removed={() =>props.ingredientRemoved(currentEl.type)}
                     disabled={props.disabled[currentEl.type]}/>
             ))}
-            <button className={controlsStyling.OrderButton} disabled={!props.purchasable}>ORDER NOW</button>
+            <button className={controlsStyling.OrderButton} 
+                disabled={!props.purchasable}
+                onClick={props.ordered}>ORDER NOW</button>
         </div>
     );
 };
