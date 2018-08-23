@@ -36,6 +36,11 @@ class BurgerBuilder extends Component {
 
     removeIngredientHandler = (type) => {
         const oldCount = this.state.ingredients[type];
+        // handles possible negative amount of an ingredient
+        if (oldCount <= 0) {
+            return;
+        }
+
         const updatedCount = oldCount - 1;
         const updatedIngredients = {
             ...this.state.ingredients
@@ -49,12 +54,22 @@ class BurgerBuilder extends Component {
 
 
     render () {
+        // returns true if ingredient amount is 0 
+        const nullIngredients = {
+            ...this.state.ingredients
+        }
+        for(let key in nullIngredients) {
+            nullIngredients[key] = nullIngredients[key] <= 0
+        }
+
+        
         return (
             <React.Fragment>
                 <Burger ingredients={this.state.ingredients}/>
                 <Controls 
                     ingredientAdded = {this.addIngredientHandler}
-                    ingredientRemoved = {this.removeIngredientHandler}/>
+                    ingredientRemoved = {this.removeIngredientHandler}
+                    disabled={nullIngredients} />
             </React.Fragment>
         );
     }

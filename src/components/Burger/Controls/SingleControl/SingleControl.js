@@ -9,7 +9,7 @@ const SingleControl = (props) => {
                 {props.label}
             </div>
             
-            <button className={controlStyling.Less} onClick={props.removed}>Less</button>
+            <button className={controlStyling.Less} onClick={props.removed} disabled={props.disabled}>Less</button>
             <button className={controlStyling.More} onClick={props.added}>More</button>
         </div>
     );

@@ -20,7 +20,8 @@ const Controls = (props) => {
                     key={currentEl.label}
                     label={currentEl.label}
                     added={() => props.ingredientAdded(currentEl.type)}
-                    removed={() =>props.ingredientRemoved(currentEl.type)}/>
+                    removed={() =>props.ingredientRemoved(currentEl.type)}
+                    disabled={props.disabled[currentEl.type]}/>
             ))}
         </div>
     );
