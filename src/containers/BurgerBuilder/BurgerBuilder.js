@@ -62,14 +62,15 @@ class BurgerBuilder extends Component {
             nullIngredients[key] = nullIngredients[key] <= 0
         }
 
-        
+
         return (
             <React.Fragment>
                 <Burger ingredients={this.state.ingredients}/>
                 <Controls 
                     ingredientAdded = {this.addIngredientHandler}
                     ingredientRemoved = {this.removeIngredientHandler}
-                    disabled={nullIngredients} />
+                    disabled={nullIngredients}
+                    price = {this.state.totalPrice} />
             </React.Fragment>
         );
     }

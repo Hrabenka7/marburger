@@ -15,6 +15,7 @@ const controls = [
 const Controls = (props) => {
     return (
         <div className={controlsStyling.Controls}>
+        <p>Total price: <strong>{props.price.toFixed(2)}</strong></p>
             {controls.map(currentEl => (
                 <SingleControl 
                     key={currentEl.label}
