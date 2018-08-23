@@ -21,7 +21,7 @@ class BurgerBuilder extends Component {
         },
         totalPrice: 2,
         purchasable: false,
-        purchasableClicked: false
+        purchaseModeOn: false
     }
 
     addIngredientHandler = (type) => {
@@ -38,8 +38,12 @@ class BurgerBuilder extends Component {
         this.updatePurchasable(updatedIngredients);
     }
 
+    closeModal = () => {
+        this.setState({purchaseModeOn: false})
+    }
+
     purchaseHandler = () => {
-        this.setState({purchasableClicked: true})
+        this.setState({purchaseModeOn: true})
     }
 
     removeIngredientHandler = (type) => {
@@ -88,7 +92,7 @@ class BurgerBuilder extends Component {
 
         return (
             <React.Fragment>
-                <Modal show={this.state.purchasableClicked}>
+                <Modal show={this.state.purchaseModeOn} modalClosed={this.closeModal}>
                     <OrderSummary ingredients={this.state.ingredients}/>
                 </Modal>
                 <Burger ingredients={this.state.ingredients}/>
