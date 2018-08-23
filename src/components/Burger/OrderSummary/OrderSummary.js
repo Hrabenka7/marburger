@@ -1,4 +1,5 @@
 import React from 'react';
+import summaryStyling from './OrderSummary.css'
 
 const orderSummary = (props) => {
     const ingredientsSummary = Object.keys(props.ingredients)
@@ -15,8 +16,11 @@ const orderSummary = (props) => {
                 {ingredientsSummary}
             </ul>
             <p>Continue to check out?</p>
+            <button className={[summaryStyling.Button, summaryStyling.Danger].join(' ')} onClick={props.purchaseCanceled}>CANCEL</button>
+            <button className={[summaryStyling.Button, summaryStyling.Success].join(' ')} onClick={props.purchaseContinue}>CONTINUE</button>
         </React.Fragment>
     );
 };
 
 export default orderSummary;
+
