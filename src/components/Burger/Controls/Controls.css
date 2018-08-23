@@ -2,7 +2,7 @@
     width: 100%;
     background-color: #CF8F2E;
     display: flex;
-    flex-grow: column;
+    flex-flow: column;
     align-items: center;
     box-shadow: 0 2px 1px #ccc;
     margin: auto;
