@@ -19,7 +19,8 @@ const Controls = (props) => {
                 <SingleControl 
                     key={currentEl.label}
                     label={currentEl.label}
-                    added={() => props.ingredientAdded(currentEl.type)}/>
+                    added={() => props.ingredientAdded(currentEl.type)}
+                    removed={() =>props.ingredientRemoved(currentEl.type)}/>
             ))}
         </div>
     );

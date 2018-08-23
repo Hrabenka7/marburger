@@ -21,7 +21,6 @@ class BurgerBuilder extends Component {
     }
 
     addIngredientHandler = (type) => {
-        console.log('button was clicked')
         const oldCount = this.state.ingredients[type];
         const updatedCount = oldCount + 1;
         const updatedIngredients = {
@@ -35,11 +34,27 @@ class BurgerBuilder extends Component {
     }
 
 
+    removeIngredientHandler = (type) => {
+        const oldCount = this.state.ingredients[type];
+        const updatedCount = oldCount - 1;
+        const updatedIngredients = {
+            ...this.state.ingredients
+        };
+        updatedIngredients[type] = updatedCount;
+        const priceSubtraction = INGREDIENTS_PRICES[type];
+        const initPrice = this.state.totalPrice;
+        const newPrice = initPrice - priceSubtraction;
+        this.setState({totalPrice: newPrice, ingredients: updatedIngredients})
+    }
+
+
     render () {
         return (
             <React.Fragment>
                 <Burger ingredients={this.state.ingredients}/>
-                <Controls ingredientAdded = {this.addIngredientHandler}/>
+                <Controls 
+                    ingredientAdded = {this.addIngredientHandler}
+                    ingredientRemoved = {this.removeIngredientHandler}/>
             </React.Fragment>
         );
     }
