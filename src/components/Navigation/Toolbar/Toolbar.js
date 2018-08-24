@@ -1,11 +1,12 @@
 import React from 'react';
-import toolbarStyling from './Toolbar.css'
+import toolbarStyling from './Toolbar.css';
+import Logo from '../../Logo/Logo'
 
 const toolbar = (props) => {
     return (
         <header className={toolbarStyling.Toolbar}>
             <div>Menu</div>
-            <div>Logo</div>
+            <Logo/>
             <nav>
                 <ul>
 
