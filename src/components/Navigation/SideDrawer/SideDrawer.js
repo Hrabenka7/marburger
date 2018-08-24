@@ -6,7 +6,7 @@ import drawerStyling from './SideDrawer.css'
 const sideDrawer = (props) => {
     return (
         <div className={drawerStyling.SideDrawer}>
-            <Logo/>
+            <Logo height="10%"/>
             <nav>
             <ItemsNav/>
             </nav>
