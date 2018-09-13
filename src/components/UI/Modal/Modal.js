@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import modalStyling from './Modal.css';
+import style from './Modal.css';
 import Backdrop from '../Backdrop/Backdrop';
 
 class Modal extends Component {
@@ -16,7 +16,7 @@ class Modal extends Component {
         return(
             <React.Fragment>
                 <Backdrop show={this.props.show} clicked={this.props.modalClosed} />
-                <div className={modalStyling.Modal}
+                <div className={style.Modal}
                     style={{
                         transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)',
                         opacity: this.props.show ? '1' : '0'

@@ -6,7 +6,6 @@ import style from './SideDrawer.css'
 
 const sideDrawer = (props) => {
     let attachedClasses = [style.SideDrawer, style.Close];
-
     if (props.open) {
         attachedClasses = [style.SideDrawer, style.Open]
     }
@@ -17,7 +16,7 @@ const sideDrawer = (props) => {
                 <div className={attachedClasses.join(' ')}>
                     <Logo height="10%" marginBottom="32px"/>
                     <nav>
-                    <ItemsNav/>
+                        <ItemsNav/>
                     </nav>
                 </div>
         </React.Fragment>

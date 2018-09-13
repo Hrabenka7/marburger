@@ -6,7 +6,7 @@ import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 import axios from '../../axios-orders';
 import Spinner from  '../../components/UI/Spinner/Spinner';
 
-import errorHandler from '../../hoc/errorHandler/errorHandler'//small letter because it is not used in JSX
+import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler'//small letter because it is not used in JSX
 
 const INGREDIENTS_PRICES = {
     salad:0.5,
@@ -21,14 +21,18 @@ class BurgerBuilder extends Component {
         totalPrice: 2,
         purchasable: false,
         purchaseModeOn: false,
-        loading: false
+        loading: false,
+        error:false
     }
 
-    // method for fetching data
+    // -------------- method for fetching data ------------------------ //
     componentDidMount () {
         axios.get('https://marburger-m1.firebaseio.com/ingredients.json')
             .then( response => {
                 this.setState({ingredients: response.data})
+            })
+            .catch (error => {
+               this.setState({error: true});
             })
     }
 
@@ -117,7 +121,7 @@ class BurgerBuilder extends Component {
 
     render () {
         let orderSummary = null;
-        let burger = <Spinner/>
+        let burger = this.state.error ? <p>Ingredients can't be loaded</p> : <Spinner />;
 
         // returns true if ingredient amount is 0 
         const nullIngredients = {
@@ -165,4 +169,4 @@ class BurgerBuilder extends Component {
     }
 }
 
-export default errorHandler(BurgerBuilder, axios);
+export default withErrorHandler(BurgerBuilder, axios);
