@@ -2,13 +2,13 @@ import React from 'react';
 import ItemsNav from '../ItemsNav/ItemsNav';
 import Logo from '../../Logo/Logo'
 import BackDrop from '../../UI/Backdrop/Backdrop';
-import drawerStyling from './SideDrawer.css'
+import style from './SideDrawer.css'
 
 const sideDrawer = (props) => {
-    let attachedClasses = [drawerStyling.SideDrawer, drawerStyling.Close];
+    let attachedClasses = [style.SideDrawer, style.Close];
 
     if (props.open) {
-        attachedClasses = [drawerStyling.SideDrawer, drawerStyling.Open]
+        attachedClasses = [style.SideDrawer, style.Open]
     }
 
     return (

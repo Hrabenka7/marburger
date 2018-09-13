@@ -1,11 +1,11 @@
 import React from 'react';
-import navStyling from './ItemsNav.css'
+import style from './ItemsNav.css'
 
 const itemsNav = (props) => (
-    <ul className={navStyling.ItemsNav}>
-        <li className={navStyling.SingleItem}>
-        <a href="/" className={navStyling.active}>Burger Builder</a></li>
-        <li className={navStyling.SingleItem}><a href="/">Checkout</a></li>
+    <ul className={style.ItemsNav}>
+        <li className={style.SingleItem}>
+        <a href="/" className={style.active}>Burger Builder</a></li>
+        <li className={style.SingleItem}><a href="/">Checkout</a></li>
     </ul>
 );
 

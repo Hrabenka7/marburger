@@ -1,9 +1,10 @@
 import React from 'react';
-import menuStyling from './MenuToggle.css';
+import style from './MenuToggle.css';
 
 const menuToggle = (props) => {
     return (
-        <div className={menuStyling.MenuToggle} onClick={props.clicked}>
+        <div className={style.MenuToggle} onClick={props.clicked}>
+        {/* this is the burger menu */}
             <div></div> 
             <div></div> 
             <div></div> 

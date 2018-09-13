@@ -12,10 +12,11 @@ class Layout extends Component {
         this.setState({showSideDrawer: false})
     }
 
+    // ------ hide or show the SideDrawer depending on its previous State ----- //
     toggleSideDrawer = () => {
-        this.setState( (prevState) => {
-            return { showSideDrawer: !this.state.showSideDrawer}; 
-        } );
+        this.setState((prevState) => {
+            return { showSideDrawer: !prevState.showSideDrawer}; 
+        });
     }
 
     render() {

@@ -1,15 +1,16 @@
 import React from 'react';
-import toolbarStyling from './Toolbar.css';
+import style from './Toolbar.css';
 import Logo from '../../Logo/Logo'
-import ItemsNav from '../../Navigation/ItemsNav/ItemsNav'
+import ItemsNav from '../ItemsNav/ItemsNav'
 import MenuToggle from '../SideDrawer/MenuToggle/MenuToggle'
 
 const toolbar = (props) => {
     return (
-        <header className={toolbarStyling.Toolbar}>
+        <header className={style.Toolbar}>
             <MenuToggle clicked={props.toggleClicked}/>
             <Logo height="80%"/>
-            <nav className={toolbarStyling.DesktopOnly}>
+            
+            <nav className={style.DesktopOnly}>
                 <ItemsNav></ItemsNav>
             </nav>
             

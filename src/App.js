@@ -1,9 +1,10 @@
+
 import React, { Component } from 'react';
 import './App.css';
-//components
+// ------ statefull Containers ------- //
 import Layout from './containers/Layout/Layout'
-//containers
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder'
+
 
 class App extends Component {
   render() {
