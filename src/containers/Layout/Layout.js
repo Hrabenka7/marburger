@@ -1,13 +1,18 @@
+/** Child component of App.js, wrapping the BurgerBuilder. */
+
 import React, {Component} from "react";
 import layoutStyling from './Layout.css'
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar'
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer'
 
 class Layout extends Component {
+    
+    // -- initially the sideDrawer is hidden -- //
     state = {
         showSideDrawer: false
     }
 
+    // -- close side drawer when its opened -- //
     closeSideDrawer = () => {
         this.setState({showSideDrawer: false})
     }

@@ -1,3 +1,5 @@
+/** Side Menu open by clicking on burger menu, small screen size */
+
 import React from 'react';
 import ItemsNav from '../ItemsNav/ItemsNav';
 import Logo from '../../Logo/Logo'
