@@ -1,4 +1,7 @@
-/** Side Menu open by clicking on burger menu, small screen size */
+/** 
+ * Side Menu opened by clicking on burger menu, small screen size 
+ * Receives props from Layout {open: false/true, clicked}
+ * */
 
 import React from 'react';
 import ItemsNav from '../ItemsNav/ItemsNav';
@@ -6,6 +9,7 @@ import Logo from '../../Logo/Logo'
 import BackDrop from '../../UI/Backdrop/Backdrop';
 import style from './SideDrawer.css'
 
+// ------  apply translate styling (animation) ----- //
 const sideDrawer = (props) => {
     let attachedClasses = [style.SideDrawer, style.Close];
     if (props.open) {

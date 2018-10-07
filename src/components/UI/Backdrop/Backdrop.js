@@ -1,3 +1,7 @@
+/**
+ * receives props from parent class SideDrawer {show}
+ */
+
 import React from 'react';
 import style from './Backdrop.css'
 

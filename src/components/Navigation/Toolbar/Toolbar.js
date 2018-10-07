@@ -1,3 +1,7 @@
+/**
+ * Child component of Layout. Receiving props { toggleClicked } from Layout
+ */
+
 import React from 'react';
 import style from './Toolbar.css';
 import Logo from '../../Logo/Logo'

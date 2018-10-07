@@ -1,8 +1,13 @@
+/**
+ * Child element of Controls.
+ * Props {label, added, removed, disabled}
+ */
 import React from 'react';
 import controlStyling from './SingleControl.css'
 
 
 const SingleControl = (props) => {
+    console.log("Single",props)
     return (
         <div className={controlStyling.SingleControl}>
             <div className={controlStyling.Label}>
