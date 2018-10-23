@@ -27,6 +27,7 @@ class BurgerBuilder extends Component {
 
     // -------------- method for fetching data ------------------------ //
     componentDidMount () {
+        console.log(this.props) // we can acces match property, routable project
         axios.get('https://marburger-m1.firebaseio.com/ingredients.json')
             .then( response => {
                 this.setState({ingredients: response.data})
@@ -59,29 +60,30 @@ class BurgerBuilder extends Component {
     }
 
     purchaseContinueHandler = () => {
-        this.setState({loading: true})
-        //alert('Some alert text here')
-        const order = {
-            ingredients: this.state.ingredients,
-            price: this.state.totalPrice,
-            customer: {
-                name: "Marketa",
-                address: {
-                    street: 'Av.Roma 456',
-                    zipCode: "08456" ,
-                    country: 'Spain'
-                },
-                email: "marketa@test.com"
-            },
-            deliveryMethod: 'fastest'
-        }
-        axios.post('/orders.json', order) // .json only for FireBase
-            .then(response => {
-                this.setState({loading: false, purchaseModeOn: false})
-            })
-            .catch(error => {
-                this.setState({loading: false, purchaseModeOn: false})
-            })
+        // this.setState({loading: true})
+        // //alert('Some alert text here')
+        // const order = {
+        //     ingredients: this.state.ingredients,
+        //     price: this.state.totalPrice,
+        //     customer: {
+        //         name: "Marketa",
+        //         address: {
+        //             street: 'Av.Roma 456',
+        //             zipCode: "08456" ,
+        //             country: 'Spain'
+        //         },
+        //         email: "marketa@test.com"
+        //     },
+        //     deliveryMethod: 'fastest'
+        // }
+        // axios.post('/orders.json', order) // .json only for FireBase
+        //     .then(response => {
+        //         this.setState({loading: false, purchaseModeOn: false})
+        //     })
+        //     .catch(error => {
+        //         this.setState({loading: false, purchaseModeOn: false})
+        //     })
+        this.props.history.push('/checkout')
 
     }
 

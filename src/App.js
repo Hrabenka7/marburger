@@ -1,9 +1,12 @@
 
 import React, { Component } from 'react';
 import './App.css';
+import { Route } from 'react-router-dom';
+
 // ------ statefull Containers ------- //
 import Layout from './containers/Layout/Layout'
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder'
+import Checkout from './containers/Checkout/checkout'
 
 
 class App extends Component {
@@ -11,7 +14,8 @@ class App extends Component {
     return (
       <div>
        <Layout>
-         <BurgerBuilder></BurgerBuilder>
+         <Route path="/" exact component={BurgerBuilder}/> 
+         <Route path="/checkout" component={Checkout}/>
        </Layout>
       </div>
     );
