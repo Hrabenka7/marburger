@@ -1,18 +1,23 @@
+/** Child component Burger of parent Burger Builder
+ *  props {Object -> Ingredients}
+ */
+
 import React from 'react';
 import {withRouter} from 'react-router-dom' // adds match properties to thewrapped component
 import burgerStyling from './Burger.css'
 import Ingredient from './Ingredient/Ingredient';
 
+// ------- add amount to each ingredient ------ //
 const burger = (props) => { 
     // props : ingredients object [from BurgerBuilder state]
     console.log(props); // burger not loaded through Route Object, so no macth props (only BurgerBuilder is)
     const arrayIngredients = [];
     for (var obj in props.ingredients) {
-        for (var i = 0; i< props.ingredients[obj]; i++) { //props.ingredients[obj] = amount of Ingredients
+        for (var i = 0; i< props.ingredients[obj]; i++) { 
             arrayIngredients.push(obj)
         } 
     } 
-    console.log(arrayIngredients)
+    console.log("Array of Ingredients", arrayIngredients)
     
     // array of Objects with index key and type
     let mappedIngredients = arrayIngredients.map((currElement, index) => 

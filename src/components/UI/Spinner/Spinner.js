@@ -1,3 +1,5 @@
+/** Spinner - check styles section */
+
 import React from 'react';
 import classes from './Spinner.css'
 

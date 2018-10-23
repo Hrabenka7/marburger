@@ -1,3 +1,7 @@
+/**
+ * Link from the parent element Toolbar(navbar) 
+ */
+
 import React from 'react';
 import style from './ItemsNav.css'
 

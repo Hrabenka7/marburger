@@ -6,7 +6,7 @@ import ingredientStyling from './Ingredient.css'
 class Ingredient extends Component {
     render() {
         let ingredient = null;
-
+        console.log("ing", this.props)
         switch(this.props.type) {
             case('bacon'):
                 ingredient = <div className={ingredientStyling.Bacon}></div>;

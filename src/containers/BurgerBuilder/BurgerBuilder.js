@@ -123,6 +123,7 @@ class BurgerBuilder extends Component {
 
     render () {
         let orderSummary = null;
+        // ------- show error or spinner --------- //
         let burger = this.state.error ? <p>Ingredients can't be loaded</p> : <Spinner />;
 
         // returns true if ingredient amount is 0 

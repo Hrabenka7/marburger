@@ -1,4 +1,6 @@
-/** Child component of App.js, wrapping the BurgerBuilder. */
+/** Child component of App.js, wrapping the BurgerBuilder. 
+ * Sending props toggleClicked to Toolbar
+*/
 
 import React, {Component} from "react";
 import layoutStyling from './Layout.css'
